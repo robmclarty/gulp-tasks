@@ -1,7 +1,7 @@
 [
   {
-    "name": "jwt-sales-finder",
-    "cwd": "/home/ubuntu/apps/jwt-sales-finder",
+    "name": "<your-app-name>",
+    "cwd": "/opt/<your-app-name>",
     "script": "bin/www",
     "max_memory_restart": "350M",
     "watch": false,
@@ -9,13 +9,17 @@
     "node_args": "--harmony_destructuring",
     "env": {
       "PORT": 4002,
-      "APP_NAME": "sales-finder",
+      "APP_NAME": "<your-app-name>",
       "NODE_ENV": "production",
-      "UPLOAD_FOLDER": "/home/ubuntu/apps/jwt-sales-finder/server/uploads",
-      "DATABASE": "mysql://root@localhost:3306/jwt-sales-finder",
-      "MIGRATE": "safe",
-      "JWT_ISSUER": "telus-jwt",
-      "JWT_SECRET": "[should-match-the-ACCESS-secret-on-the-auth-manager-server]"
-    }
+      "ASSETS_PATH": "/srv/opt/<your-app-name>",
+      "DATABASE": "mysql://root@localhost:3306/<your-db>",
+      "JWT_ISSUER": "<your-issuer-name>",
+      "JWT_SECRET": "<your_super_secret_secret>"
+    },
+    "error_file": "/var/opt/<your-app-name>/err.log",
+    "out_file": "/var/opt/<your-app-name>/out.log",
+    "merge_logs": true,
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "pid_file": "/var/opt/<your-app-name>/pm2.pid"
   }
 ]

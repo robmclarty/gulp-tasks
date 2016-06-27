@@ -1,6 +1,0 @@
-{
-  "appName": "workforce-manager",
-  "authRoot": "https://auth.mbenablers.com",
-  "locationsRoot": "https://sales-finder.mbenablers.com",
-  "assignmentsRoot": "https://workforce.mbenablers.com"
-}
