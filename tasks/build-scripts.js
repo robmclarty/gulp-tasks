@@ -12,6 +12,7 @@ const buffer = require('vinyl-buffer');
 
 const config = require('../config/gulp');
 
+// NOTE: Update this list for your own specific vendor files.
 const vendors = [
   'react',
   'react-dom',
