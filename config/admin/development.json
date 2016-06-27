@@ -1,0 +1,6 @@
+{
+  "appName": "workforce-manager",
+  "authRoot": "http://localhost:3000",
+  "locationsRoot": "http://localhost:3001",
+  "assignmentsRoot": "http://localhost:3002"
+}
