@@ -23,8 +23,7 @@ const autoprefixerBrowsers = [
 gulp.task('build:styles', function () {
   const isProduction = process.env.NODE_ENV === 'production';
 
-  return gulp
-    .src('./styles/admin/main.scss')
+  return gulp.src('./styles/client/main.scss')
     .pipe(gulpif(!isProduction, sourcemaps.init()))
       .pipe(concat('application.scss'))
       .pipe(sass({ style: 'expanded' }))

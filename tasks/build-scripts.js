@@ -21,13 +21,7 @@ const vendors = [
   'react-redux',
   'react-router',
   'react-router-redux',
-  'react-dropdown',
-  'suggestible-input',
-  'page-break',
   'localforage',
-  'google-maps',
-  'marker-clusterer-plus',
-  'node-fetch',
   'ramda'
 ];
 
@@ -40,8 +34,7 @@ gulp.task('build:vendors', function buildVendors() {
     require: vendors
   });
 
-  return stream
-    .bundle()
+  return stream.bundle()
     .pipe(source('vendors.js'))
     .pipe(buffer())
     .pipe(gulpif(!isProduction, sourcemaps.init({ loadMaps: true })))
@@ -72,8 +65,7 @@ gulp.task('build:client', function () {
     stream.external(vendor);
   });
 
-  return stream
-    .bundle()
+  return stream.bundle()
     .pipe(source('application.js'))
     .pipe(buffer())
     .pipe(gulpif(!isProduction, sourcemaps.init({ loadMaps: true })))

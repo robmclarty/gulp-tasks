@@ -9,7 +9,7 @@ const config = require('../config/gulp');
 const serverConf = require('../config/server');
 const spawnConf = { cwd: config.deploy.appRoot, env: process.env };
 
-const bufferToString = (data) => {
+const bufferToString = data => {
   const buff = new Buffer(data);
   return buff.toString('utf8');
 };
@@ -37,8 +37,7 @@ gulp.task('deploy:assets', function () {
     ]
   };
 
-  return gulp
-    .src('./public/**')
+  return gulp.src('./public/**')
     .pipe(rsync(rsyncConf));
 });
 
@@ -53,8 +52,7 @@ gulp.task('deploy:server', function () {
     clean: true
   };
 
-  return gulp
-    .src([
+  return gulp.src([
       './server/**',
       './config/server.js',
       './bin/www',

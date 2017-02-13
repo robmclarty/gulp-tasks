@@ -18,7 +18,7 @@ gulp.task('server', function (done) {
   ], { stdio: 'inherit' });
 
   node.on('close', code => {
-    if (code === 8) glup.log('Error detected, waiting for changes...');
+    if (code === 8) gulp.log('Error detected, waiting for changes...');
   });
 
   done();

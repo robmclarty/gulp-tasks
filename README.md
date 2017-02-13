@@ -12,6 +12,12 @@ folder. Once copied, feel free to modify the tasks and tweak them for your
 specific needs. That said, I've tried to make them generic enough such that you
 don't require too much tweaking (if any) to get up and running.
 
+I've included a `package.json` file here as an example of the dependencies one
+should expect to use. The most significant of which is the use of Gulp v4
+imported directly from the git repository rather than the standard npm package
+which uses v3.9. This enables the use of the builtin `series` and `parallel`
+methods to help join multiple tasks together in sequences.
+
 ## Usage
 
 The main tasks defined here are as follows (as they would be executed from the

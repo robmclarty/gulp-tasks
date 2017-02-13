@@ -8,8 +8,7 @@ const config = require('../config/gulp');
 
 // Apply rev hashes to all static asset file names for cache busting.
 gulp.task('rev:assets', function () {
-  return gulp
-    .src('./assets/**/*')
+  return gulp.src('./assets/**/*')
     .pipe(rev())
     .pipe(gulp.dest(config.build.root))
     .pipe(rev.manifest(config.rev.assets))
@@ -21,8 +20,7 @@ gulp.task('rev:assets', function () {
 gulp.task('rev:js', function () {
   const manifest = gulp.src(`${ config.build.root }/${ config.rev.assets }`);
 
-  return gulp
-    .src(`${ config.build.javascripts }/**/*.js`)
+  return gulp.src(`${ config.build.javascripts }/**/*.js`)
     .pipe(revReplace({ manifest: manifest }))
     .pipe(rev())
     .pipe(gulp.dest(config.build.javascripts))
@@ -35,8 +33,7 @@ gulp.task('rev:js', function () {
 gulp.task('rev:css', function () {
   const manifest = gulp.src(`${ config.build.root }/${ config.rev.assets }`);
 
-  return gulp
-    .src(`${ config.build.stylesheets }/**/*.css`)
+  return gulp.src(`${ config.build.stylesheets }/**/*.css`)
     .pipe(revReplace({ manifest: manifest }))
     .pipe(rev())
     .pipe(gulp.dest(config.build.stylesheets))
@@ -54,8 +51,7 @@ gulp.task('rev:html', function () {
   const jsManifest = gulp.src(`${ config.build.root }/${ config.rev.javascripts }`);
   const cssManifest = gulp.src(`${ config.build.root }/${ config.rev.stylesheets }`);
 
-  return gulp
-    .src(`${ config.build.admin }/**/*.html`)
+  return gulp.src(`${ config.build.admin }/**/*.html`)
     .pipe(revReplace({ manifest: jsManifest }))
     .pipe(revReplace({ manifest: cssManifest }))
     .pipe(gulp.dest(config.build.admin));
