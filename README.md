@@ -42,6 +42,22 @@ task which server it should deploy to (e.g., `gulp deploy --host my-host` where
 if you are not using the config file too (e.g.,
 `gulp deploy --host username:password@hostname:/path`).
 
+An example entry in `~/.ssh/config`:
+
+```
+Host my-host
+     User myusername
+     HostName 123.123.123.123
+     IdentityFile ~/.ssh/my-private-key.pem
+     IdentitiesOnly yes
+```
+
+I would recommend installing your SSH public key on the remote server for
+authentication rather than storing your server's private key locally. You can do
+this by simply concatenating the contents of your `~/.ssh/id_rsa.pub` to the
+remote server's `~/.ssh/authorized_keys`.
+[Read more about SSH public key auth](https://kb.iu.edu/d/aews).
+
 These compound tasks are further broken down as follows, although you likely
 won't use these tasks since they are called from the above:
 
