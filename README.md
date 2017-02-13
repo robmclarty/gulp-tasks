@@ -266,6 +266,9 @@ this setup is a great balance of ease-of-setup, power-to-scale (up to a certain
 point), and flexibility to change configurations in a continually changing
 development context.
 
+See my [nginx-config](https://github.com/robmclarty/nginx-config) repo for some
+example config files.
+
 ### PM2
 
 I like using PM2 for managing my actual Node.js processes. It's very simple to
@@ -278,6 +281,10 @@ Like the choice to use Node.js, this may or may not be the best final solution
 at scale, but it's a great place to start until your app reaches escape
 velocity. The point being that less time is spent on "getting it to work" and
 more time can be spent on figuring out what "it" is.
+
+An example PM2 config file is located in `./config` for reference. Don't include
+`"node_args": "--harmony_destructuring"` if using a newer version of Node.js (it
+includes this).
 
 ## Running the Server Locally (for dev)
 
